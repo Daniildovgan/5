@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+void replaceSpacesWithTabs(std::string& str) {
+    for (char& c : str) {
+        if (c == ' ') {
+            c = '\t';
+        }
+    }
+}
+
+int main() {
+    std::string text = "Hello world! This is a test string with spaces.";
+
+    replaceSpacesWithTabs(text);
+
+    std::cout << "Modified string: " << text << std::endl;
+
+    return 0;
+}
