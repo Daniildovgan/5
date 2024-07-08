@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cctype>
+
+void countCharacters(const std::string& str, int& letters, int& digits, int& others) {
+    letters = digits = others = 0;
+    
+    for (char c : str) {
+        if (std::isalpha(c)) {
+            letters++;
+        } else if (std::isdigit(c)) {
+            digits++;
+        } else {
+            others++;
+        }
+    }
+}
+
+int main() {
+    std::string text = "Hello 123! How are you today?";
+
+    int letterCount, digitCount, otherCount;
+    countCharacters(text, letterCount, digitCount, otherCount);
+
+    std::cout << "Number of letters: " << letterCount << std::endl;
+    std::cout << "Number of digits: " << digitCount << std::endl;
+    std::cout << "Number of other characters: " << otherCount << std::endl;
+
+    return 0;
+}
